@@ -40,7 +40,7 @@ class App extends Component {
     const { searchQuery, page } = this.state;
     this.setState({ loading: true });
     imagesApi
-      .fetchImagesWithQuery(searchQuery, page)
+      .getImages(searchQuery, page)
       .then(images => {
         if (images.length === 0) {
           this.setState({ found: false });
